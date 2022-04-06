@@ -56,7 +56,7 @@ keyClick.addEventListener('click', (e) => {
 });
 
 window.addEventListener('keydown', (e) => {
-  if (e.key === '/') { e.preventDefault() };
+  if (e.key === '/' || e.key === 'Backspace') { e.preventDefault() };
   let keyPress = document.querySelector(`button[key="${e.key}"]`);
   if (e.key === "Enter" || e.key === "=") {
     keyPress = document.querySelector(`button[key="enter"]`);
