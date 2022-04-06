@@ -10,6 +10,10 @@ const calculator = {
 
 function updateDisplay() {
   displayNum.textContent = calculator.displayVal;
+  const valueLen = calculator.displayVal.length;
+  if (valueLen > 15) {
+    displayNum.textContent = calculator.displayVal.substring(0,15);
+  }
 }
 updateDisplay();
 
@@ -102,7 +106,7 @@ function takeOperator(nextOperator) {
     calculator.firstOperand = inputVal;
   } else if (operator) {
     const result = operate(firstOperand, inputVal, operator);
-    calculator.displayVal = `${parseFloat(result.toFixed(9))}`;
+    calculator.displayVal = `${parseFloat(result.toFixed(6))}`;
     if (calculator.displayVal === "Infinity") {
       calculator.displayVal = 'lol nope';
     }
@@ -145,17 +149,17 @@ function clearCurrent() {
 
 function getPercent(value) {
   const displayVal = calculator.displayVal;
-  const firstOperand = parseFloat(displayVal);
+  const firstOperand = parseFloat(displayVal).toFixed(9);
   const result = firstOperand * 0.01;
-
-  calculator.displayVal = result.toString();
+  console.log(calculator);
+  return calculator.displayVal = result.toString();
 
 }
 
 function getSign(value) {
   const displayVal = calculator.displayVal;
-  const firstOperand = parseFloat(displayVal);
+  const firstOperand = parseFloat(displayVal).toFixed(9);
   const result = firstOperand * -1;
-  calculator.displayVal = result.toString();
+  return calculator.displayVal = result.toString();
 
 }
