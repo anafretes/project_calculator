@@ -43,6 +43,24 @@ button {
   min-height: 40vh;
 }
 
+.operator {
+  background-color: #470744;
+  color: grey;
+}
+.operand {
+  background-color: #1e2b02;
+  color: white;
+}
+
+.clear {
+  background-color: #870622;
+  color: white;
+}
+.delete {
+  background-color: #870622;
+  color: white;
+}
+
 button:hover {
   background-color: #5e7684;
 }
